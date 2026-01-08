@@ -47,7 +47,7 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 1100px;
 }
 
 section h3 {
@@ -55,6 +55,186 @@ section h3 {
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   color: #1a237e;
+}
+
+.section-lede {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.section-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .section-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+.card-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-note {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.virtual-card {
+  background: linear-gradient(135deg, #1a237e, #3949ab);
+  color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 10px 20px rgba(26, 35, 126, 0.3);
+}
+
+.virtual-card h4 {
+  font-size: 1.2rem;
+}
+
+.card-tag {
+  align-self: flex-start;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card-name {
+  font-weight: bold;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.member-count {
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #eef3ff;
+  border-radius: 8px;
+  border: 1px solid #d7def9;
+  text-align: center;
+}
+
+.member-count .count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.tier-grid {
+  display: grid;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .tier-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.tier-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.tier-card.highlighted {
+  border-color: #1a237e;
+  box-shadow: 0 6px 14px rgba(26, 35, 126, 0.12);
+}
+
+.tier-price {
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 12px;
+}
+
+.tier-card ul,
+.pill-list,
+.goal-list {
+  padding-left: 18px;
+}
+
+.benefits {
+  margin-top: 20px;
+}
+
+.pill-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: 600px) {
+  .pill-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pill-list li {
+  background-color: #f3f4ff;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.blog-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.blog-feature {
+  background-color: #f9f9ff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e0e6ff;
+}
+
+.goal-list {
+  margin: 0;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fff8e1;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #ffe0a3;
+}
+
+@media (min-width: 768px) {
+  .book-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .activity-card {
