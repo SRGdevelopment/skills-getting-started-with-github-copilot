@@ -215,6 +215,19 @@ section h3 {
   border: 1px solid #e0e6ff;
 }
 
+.callout {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fef3f2;
+  border: 1px solid #f5c2c0;
+}
+
+.callout h4 {
+  margin-bottom: 8px;
+  color: #b42318;
+}
+
 .goal-list {
   margin: 0;
 }
