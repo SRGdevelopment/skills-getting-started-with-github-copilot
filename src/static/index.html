@@ -3,46 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
+    <title>SRG Strategic Facilities Portal</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-content">
+        <div>
+          <p class="eyebrow">SRG Strategic Operations</p>
+          <h1>Strategic Facilities Portal</h1>
+          <p class="subtitle">
+            Aggregate, non-identifying intelligence on facilities, membership tiers,
+            and community updates.
+          </p>
+        </div>
+        <nav>
+          <a href="#facilities">Facilities</a>
+          <a href="#map">NY Map</a>
+          <a href="#priority-states">Priority States</a>
+          <a href="#membership">Membership</a>
+          <a href="#updates">Strategic Info Upload</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+      <section id="facilities" class="panel">
+        <div class="section-title">
+          <h2>Facility Strategic Overview</h2>
+          <p>
+            Data is aggregated for situational awareness. Do not include personal
+            or identifying information about individuals.
+          </p>
+        </div>
+        <div id="facilities-list" class="card-grid">
+          <p>Loading facilities...</p>
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+      <section id="map" class="panel">
+        <div class="section-title">
+          <h2>Interactive New York Map</h2>
+          <p>Click a facility marker to highlight its strategic card.</p>
+        </div>
+        <div class="map-layout">
+          <div class="map-wrapper">
+            <svg viewBox="0 0 200 260" aria-hidden="true" class="ny-outline">
+              <path
+                d="M40 15 L120 10 L150 30 L170 60 L160 100 L180 130 L160 180 L130 220 L80 240 L40 220 L30 180 L20 140 L25 90 L30 60 Z"
+              />
+            </svg>
+            <div id="map-markers" class="map-markers"></div>
+          </div>
+          <div class="map-legend">
+            <h3>Facilities on Map</h3>
+            <ul id="map-legend-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="priority-states" class="panel">
+        <div class="section-title">
+          <h2>States Next in Line for SRG Charter</h2>
+          <p>
+            Focused on high population pressure and deteriorating facility
+            conditions.
+          </p>
+        </div>
+        <div id="priority-states-list" class="state-grid"></div>
+      </section>
+
+      <section id="membership" class="panel">
+        <div class="section-title">
+          <h2>SRG Membership Tiers</h2>
+          <p>
+            Members unlock features by tier and can increase their Breach level
+            through activity.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="tier-card">
+            <h3>Basic</h3>
+            <p class="price">$1 / mo</p>
+            <ul>
+              <li>Facility overview access</li>
+              <li>Public badge profile</li>
+              <li>Standard Breach tracking</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <h3>Gold</h3>
+            <p class="price">$2 / mo</p>
+            <ul>
+              <li>Priority state briefings</li>
+              <li>Expanded role selection</li>
+              <li>Badge customization</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <h3>Black</h3>
+            <p class="price">$3 / mo</p>
+            <ul>
+              <li>Advanced intelligence packs</li>
+              <li>Full Breach level controls</li>
+              <li>Strategic update routing</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="section-title">
+          <h2>Encoded Badges & Member Profiles</h2>
+          <p>
+            Click a badge to view the member profile. Members can set their
+            profile to public or private.
+          </p>
+        </div>
+        <div class="badge-layout">
+          <div id="badge-list" class="badge-list"></div>
+          <div class="profile-card" id="profile-card">
+            <p>Select a badge to view the profile.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="updates" class="panel">
+        <div class="section-title">
+          <h2>Strategic Info Upload</h2>
+          <p>
+            Submit facility updates without personal or identifying details. Share
+            only aggregated or operational observations.
+          </p>
+        </div>
+        <form id="update-form" class="form-grid">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <label for="facility-name">Facility</label>
+            <input
+              type="text"
+              id="facility-name"
+              name="facility-name"
+              placeholder="Facility name"
+              required
+            />
           </div>
           <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option>Operations</option>
+              <option>Conditions</option>
+              <option>Programs</option>
+              <option>Health &amp; Safety</option>
+              <option>Administration</option>
+              <option>Other</option>
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <div class="form-group">
+            <label for="summary">Summary</label>
+            <textarea
+              id="summary"
+              name="summary"
+              rows="4"
+              placeholder="Summarize the update without personal details"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="submitted-by">Submitted By</label>
+            <input
+              type="text"
+              id="submitted-by"
+              name="submitted-by"
+              placeholder="Alias or unit"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="visibility">Visibility</label>
+            <select id="visibility" name="visibility" required>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+          <button type="submit">Submit Update</button>
         </form>
-        <div id="message" class="hidden"></div>
+        <div id="update-message" class="message hidden"></div>
+
+        <div class="section-title">
+          <h2>Community Updates</h2>
+        </div>
+        <div id="updates-list" class="card-grid"></div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2023 Mergington High School</p>
+      <p>&copy; 2024 SRG Strategic Operations</p>
     </footer>
 
     <script src="app.js"></script>
